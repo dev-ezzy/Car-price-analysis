@@ -11,7 +11,7 @@ def sns_xcount(column , data):
 
 #writting helper function to help us make y-axis countplots in our EDA process
 def sns_ycount(column , data):
-    sns.countplot(y = column, data = data)
+    sns.countplot(y = column, data = data, hue= column)
     plt.title(f"{column} count in our data set")
     plt.show();
     
