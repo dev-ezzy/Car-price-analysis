@@ -29,3 +29,27 @@ def plotting_trends(data, column):
     plt.xlabel("rating_timestamp")
     plt.ylabel("count")
     plt.show();
+    
+def plot_histograms(data):
+    
+    sns.set(style="dark")
+
+    num_columns = len(data.columns)
+
+    # Calculating the number of rows and columns for the subplots
+    num_rows, num_cols = int(num_columns**0.5), -(-num_columns//int(num_columns**0.5))
+
+    f, axes = plt.subplots(num_rows, num_cols, figsize=(15, 10))
+
+    for i, column in enumerate(data.columns):
+        row, col = i // num_cols, i % num_cols
+        sns.plot(data[column], kind = "hist", kde=True, ax=axes[row, col])
+        axes[row, col].set_title(f'Histogram of {column}')
+        axes[row, col].set_xlabel('Values')
+
+    # Remove any empty subplots
+    for i in range(num_columns, num_rows * num_cols):
+        f.delaxes(axes.flatten()[i])
+
+    plt.tight_layout()
+    plt.show();
