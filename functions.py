@@ -3,6 +3,8 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+#loading our data
+cars = pd.read_csv("data/CarPrice_Assignment.csv")
 
 def sns_xcount(column , data):
     sns.countplot(x = column, data = data, hue= column)
@@ -53,3 +55,12 @@ def plot_histograms(data):
 
     plt.tight_layout()
     plt.show();
+    
+#plotting box_plots and point plots
+def box_pair_plot(column):
+    fig, axes = plt.subplots(nrows= 1, ncols= 2, figsize = (15, 5))
+    sns.boxplot(y= "price", x = column, data= cars, hue= None, ax= axes[0])
+    axes[0].title(f"Box_plots of {column} against price")
+    sns.pointplot(y= "price", x = column, data= cars, ax= axes[1])
+    axes[1].title(f"Point_plots of {column} against price")
+    plt.show()

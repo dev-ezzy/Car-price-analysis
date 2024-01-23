@@ -33,3 +33,12 @@ def scatter_plots(y, X):
 def scatter(X, y):
     sns.scatterplot(x = X, y= y, data= cars)
     plt.title(f"Relationship of {X} and {y}")
+    
+#plotting box_plots and point plots
+def box_pair_plot(column):
+    fig, axes = plt.subplots(nrows= 1, ncols= 2, figsize = (15, 5))
+    sns.boxplot(y= "price", x = column, data= cars, hue= None, ax= axes[0])
+    # axes[0].title(f"Box_plots of {column} against price")
+    sns.pointplot(y= "price", x = column, data= cars, ax= axes[1])
+    # axes[1].title(f"Point_plots of {column} against price")
+    plt.show()
