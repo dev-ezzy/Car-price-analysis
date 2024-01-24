@@ -60,7 +60,7 @@ def plot_histograms(data):
 def box_pair_plot(column):
     fig, axes = plt.subplots(nrows= 1, ncols= 2, figsize = (15, 5))
     sns.boxplot(y= "price", x = column, data= cars, hue= None, ax= axes[0])
-    plt.title(f"Box_plots of {column} against price", ax = axes[0])
+    axes[0].set_title(f"Box_plots of {column} against price")
     sns.pointplot(y= "price", x = column, data= cars, ax= axes[1])
-    axes[1].title(f"Point_plots of {column} against price")
+    axes[1].set_title(f"Point_plots of {column} against price")
     plt.show()
