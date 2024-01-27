@@ -28,6 +28,6 @@ def num_to_binary(Num):
     return longest_gap
 
 
-print(num_to_binary(545)) 
+print(num_to_binary(546)) 
 
 
