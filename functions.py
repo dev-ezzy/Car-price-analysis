@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-
+from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 #loading our data
 cars = pd.read_csv("data/CarPrice_Assignment.csv")
 
@@ -65,3 +65,5 @@ def box_pair_plot(column):
     sns.pointplot(y= "price", x = column, data= cars, ax= axes[1])
     axes[1].set_title(f"Point_plots of {column} against price")
     plt.show()
+
+    
