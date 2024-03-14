@@ -8,12 +8,13 @@ Here the primary challenge extends beyond mere price prediction; it revolves aro
 ##### Language
 Python , version: 3.12.2
 ##### Libraries/Frameworks
+Packages used are ordered in the following manner;
 ##### Data manipulation and analysis
 * Pandas, version: 2.2.1
 * Seaborn, version: 0.12.2
 * Matplotlib, version: 3.8.0
 * Numpy, version: 1.26.4
-##### MAchine learning modelling
+##### Machine learning modelling
 * Scikit-learn, version: 1.3.0
 * Statsmodels, version: 0.14.0
 ##### Saving model
